@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7c651a6f-efac-41b3-b932-17f9436ed884" name="Changes" comment="" />
+    <list default="true" id="7c651a6f-efac-41b3-b932-17f9436ed884" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/homework/hw3/1.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homework/hw3/2.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/lesson_1/1.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/lesson_2/1.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/lesson_2/2.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -198,7 +205,7 @@
     <SUITE FILE_PATH="coverage/Noveo@2__2_.rcov" NAME="2 (2) Coverage Results" MODIFIED="1657899666341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Noveo" />
     <SUITE FILE_PATH="coverage/Noveo@1__1_.rcov" NAME="1 (1) Coverage Results" MODIFIED="1657452481937" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Noveo" />
     <SUITE FILE_PATH="coverage/Noveo@2.rcov" NAME="2 Coverage Results" MODIFIED="1658143641864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Noveo" />
-    <SUITE FILE_PATH="coverage/Noveo@IndifferentHash.rcov" NAME="IndifferentHash Coverage Results" MODIFIED="1658127522464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Noveo" />
+    <SUITE FILE_PATH="coverage/Noveo@IndifferentHash.rcov" NAME="IndifferentHash Coverage Results" MODIFIED="1658153363126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Noveo" />
     <SUITE FILE_PATH="coverage/Noveo@Vector.rcov" NAME="Vector Coverage Results" MODIFIED="1658070779119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Noveo" />
     <SUITE FILE_PATH="coverage/Noveo@1__2_.rcov" NAME="1 (2) Coverage Results" MODIFIED="1657900753796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Noveo" />
     <SUITE FILE_PATH="coverage/Noveo@1.rcov" NAME="1 Coverage Results" MODIFIED="1658143676795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Noveo" />
