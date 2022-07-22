@@ -1,14 +1,10 @@
 class HashWithIndifferentAccess < Hash
   alias parent_hash []
 
-  def initialize(constructor = {})
-    if constructor.respond_to?(:to_hash)
-      super()
-      update(constructor)
-    else
-      super(constructor)
-    end
-  end
+  # def initialize(constructor = {})
+  #     super()
+  #     update(constructor)
+  # end
 
   def [](key)
     if self.key?(key.to_s)
@@ -22,7 +18,8 @@ end
 
 class Hash
   def with_indifferent_access
-    HashWithIndifferentAccess.new(self)
+    # HashWithIndifferentAccess.new(self)
+    HashWithIndifferentAccess[self]
   end
 end
 
@@ -34,8 +31,7 @@ end
 #
 # Hash.include(IndifferentHashUtil)
 
-h = { :a => 1, "b" => 2 }
-h = h.with_indifferent_access
+h = { :a => 1, "b" => 2 }.with_indifferent_access
 # h = HashWithIndifferentAccess.new({ :a => 1, 'b' => 2 })
 
 # p h.is_a? HashWithIndifferentAccess
@@ -50,4 +46,3 @@ p h["b"]
 # # Indifference showcase
 p h["a"]
 p h[:b]
-
