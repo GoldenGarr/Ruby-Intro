@@ -14,6 +14,3 @@ end
 
 h = { :a => 1, 'b' => 2 }.with_indifferent_access
 p h
-
-
-
