@@ -4,42 +4,7 @@
 За тип данных можно принять Integer
 =end
 
-
-class Node
-  def initialize(value, left = nil, right = nil)
-    @value = value
-    @left = left
-    @right = right
-  end
-
-  def add(other_value)
-    iter = self
-    prev = nil
-
-    while iter != nil
-      prev = iter
-      iter = iter.value < other_value ? iter.right : iter.left
-    end
-
-    if prev.value < other_value
-      prev.right = Node.new(other_value)
-    else
-      prev.left = Node.new(other_value)
-    end
-  end
-
-  # def add_recursive(other_value)
-  #   if other_value < value
-  #     left.nil? ? @left = Node.new(value) : left.add_recursive(other_value)
-  #   elsif other_value > value
-  #     right.nil? ? @right = Node.new(value) : right.add_recursive(other_value)
-  #   else
-  #     nil
-  #   end
-  # end
-
-  public attr_accessor :value, :left, :right
-end
+require_relative 'Node'
 
 class BinaryTree
   attr_accessor :root
@@ -56,12 +21,6 @@ class BinaryTree
     else
       root.add(value)
       # root.add_recursive(value)
-      # prev
-      # while iter != nil
-      #   prev = iter
-      #   iter = iter.value < value ? iter.right : iter.left
-      # end
-      # prev.add(value)
     end
   end
 
@@ -76,22 +35,68 @@ class BinaryTree
   end
 
   def delete(value)
-
+    sub_delete(root, value)
   end
 
-  def to_s(node)
-    if node.nil?
-      return
+  def sub_delete(node, value)
+    if node == nil
+      return node
     end
-    p node.value, " | "
-    to_s(node.left)
-    to_s(node.right)
+    if value < node.value
+      node.left = sub_delete(node.left, value)
+    elsif value > node.value
+      node.right = sub_delete(node.right, value)
+    elsif node.left != nil && node.right != nil
+      node.value = get_minimum(node.right).value
+      node.right = sub_delete(node.right, value)
+    else
+      if node.left != nil
+        node.value = node.left.value
+        node.right = node.left.right
+        node.left = node.left.left
+        # node = node.left
+      elsif node.right != nil
+        node.value = node.right.value
+        node.left = node.right.left
+        node.right = node.right.right
+        # node = node.right
+      else
+        @node = nil
+      end
+    end
   end
 
-  # c Node
-  # def to_s
-  #   @node.to_s
-  # end
+  def get_minimum(node)
+    if node.left == nil
+      return node
+    end
+    get_minimum(node.left)
+    # if node == nil
+    #   return nil
+    # elsif node.left == nil
+    #   node
+    # end
+    # get_minimum(node.left)
+  end
+
+
+  def to_s
+    centered_print(root)
+  end
+
+  # An ordered debug print
+  def centered_print(node)
+    if node == nil
+      p "empty"
+    end
+    if node.left != nil
+      centered_print(node.left)
+    end
+    puts node.value.to_s
+    if node.right != nil
+      centered_print(node.right)
+    end
+  end
 
 end
 
@@ -104,10 +109,16 @@ tree.add(40)
 tree.add(34)
 tree.add(5)
 
-p tree.find(20)
-p tree.find(40)
-p tree.find(35) #...
-p tree.find(34)
-p tree.find(10)
+# p tree.find(20)
+# p tree.find(40)
+# p tree.find(35) #...
+# p tree.find(34)
+# p tree.find(10)
 
-p tree
+tree.delete(10)
+tree.delete(20)
+
+# tree.sub_delete(tree.root, 10)
+
+tree.centered_print(tree.root)
+# p tree.to_s
