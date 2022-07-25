@@ -116,8 +116,8 @@ tree.add(40)
 tree.add(34)
 tree.add(5)
 
-# p tree.find(20)
-# p tree.find(40)
-# p tree.find(35) #...
+p tree.find(20)
+p tree.find(40)
+p tree.find(35) #...
 
 p tree
