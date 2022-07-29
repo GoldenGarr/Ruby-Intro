@@ -4,7 +4,7 @@
 За тип данных можно принять Integer
 =end
 
-require_relative 'Node'
+require_relative 'node'
 
 class BinaryTree
   attr_accessor :root
@@ -58,7 +58,7 @@ class BinaryTree
     node
   end
 
-  def get_minimum(node = root)
+  private def get_minimum(node = root)
     return if node.nil?
     return node if node.left.nil?
 
@@ -70,7 +70,7 @@ class BinaryTree
   end
 
   # An ordered debug print
-  def centered_print(node = root)
+  private def centered_print(node = root)
     if node == nil
       p "empty"
     end
@@ -102,7 +102,7 @@ tree.add(5)
 # p tree.find(10)
 # p tree.find(5)
 
-tree.centered_print(tree.root)
+p tree
 puts "_____"
 
 tree.delete(10)
@@ -113,5 +113,5 @@ tree.delete(5)
 
 # tree.sub_delete(tree.root, 10)
 
-tree.centered_print(tree.root)
+p tree
 # p tree.to_s

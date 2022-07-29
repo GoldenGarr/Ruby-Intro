@@ -16,38 +16,34 @@
 # vm.release # возвращает текущую версию в формате “{major}.{minor}.{patch}”
 
 class VersionManager
-  public attr_accessor :major, :minor, :patch, :history
+  # attr_accessor :major, :minor, :patch, :history
 
   def initialize(version = "0.0.1")
     parsed = version.split(".")
 
     if is_integer(parsed)
-      @major = parsed.length > 0 ? parsed[0].to_i : 0
-      @minor = parsed.length > 1 ? parsed[1].to_i : 0
-      @patch = parsed.length > 2 ? parsed[2].to_i : 0
+      @major = parsed[0].to_i
+      @minor = parsed[1].to_i
+      @patch = parsed[2].to_i
       @history = []
     end
 
     is_valid
   end
 
-  def is_valid
+  def release
+    [@major, @minor, @patch].join(".")
+  end
+
+  private def is_valid
     if @major < 0 ||
       @minor < 0 || @patch < 0
       raise 'Invalid version'
     end
   end
 
-  def release
-    [major, minor, patch].join(".")
-  end
-
-  def is_integer(parsed)
-    result = true
-    parsed.each do |version|
-      result &&= (version.to_i.to_s == version.to_s) || version == ""
-    end
-    result
+  private def is_integer(parsed)
+    parsed.all? { |version| version.to_i.to_s == version.to_s || version == "" }
   end
 
   def major!
@@ -68,7 +64,7 @@ class VersionManager
   end
 
   def rollback!
-    curr = history.pop
+    curr = @history.pop
     if curr.nil?
       raise 'Can not rollback to previous version'
     end
@@ -79,7 +75,7 @@ class VersionManager
   end
 
   def save
-    @history << [major, minor, patch]
+    @history << [@major, @minor, @patch]
   end
 end
 
