@@ -24,45 +24,16 @@ class BinaryTree
     end
   end
 
-  def find(node = root, value)
-    return nil if node.nil?
-    if value < node.value
-      find(node.left, value)
-    elsif value > node.value
-      find(node.right, value)
-    else
-      value
+  def find(value)
+    unless root.nil?
+      root.find(value)
     end
   end
 
-  def delete(node = root, value)
-    if node == nil
-      return node
+  def delete(value)
+    unless root.nil?
+      root.delete(value)
     end
-    if value < node.value
-      node.left = delete(node.left, value)
-    elsif value > node.value
-      node.right = delete(node.right, value)
-    elsif node.left != nil && node.right != nil
-      node.value = get_minimum(node.right).value
-      node.right = delete(node.right, node.value)
-    else
-      if node.left != nil
-        node = node.left
-      elsif node.right != nil
-        node = node.right
-      else
-        node = nil
-      end
-    end
-    node
-  end
-
-  private def get_minimum(node = root)
-    return if node.nil?
-    return node if node.left.nil?
-
-    get_minimum(node.left)
   end
 
   def to_s
@@ -109,7 +80,6 @@ tree.delete(10)
 tree.delete(20)
 tree.delete(30)
 tree.delete(5)
-
 
 # tree.sub_delete(tree.root, 10)
 
